@@ -1,6 +1,20 @@
 from ncclient import manager
 import net_devs
 router = net_devs.get_homelab_4331()
+
+print("Enter the name of the loopback you want deleted: ")
+interface = input()
+
+netconf_snippet = f"""
+<config>
+    <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+        <interface operation="delete">
+            <name>{interface}</name>
+        </interface>
+    </interfaces>
+</config>
+"""
+
 loopback = """
 <config>
     <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
@@ -22,5 +36,5 @@ loopback = """
 """
 
 with manager.connect(host=router['host'], port=router['port'], username=router['username'], password=router['password'], hostkey_verify=False) as m:
-    data = m.edit_config(loopback, target='running')
+    data = m.edit_config(netconf_snippet, target='running')
     print(data)
