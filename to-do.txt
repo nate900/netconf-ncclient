@@ -1,0 +1,7 @@
+Challenges
+
+1. Get all interfaces
+2. Get a specific interface
+3. Update an attribute of an interface
+4. Insert a loopback interface
+5. Delete the loopback interface
