@@ -1,8 +1,8 @@
 # imports
 from ncclient import manager
 import xml.dom.minidom
-#router = {'host':'devnetsandboxiosxe.cisco.com', 'port': '830', 'username':'admin','password':'C1sco12345'}
-from router import router
+import net_devs
+router = net_devs.get_homelab_4331()
 
 # this filter specifies a specific interface using the ietf-interfaces model
 # yang models/capabilities

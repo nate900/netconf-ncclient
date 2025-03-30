@@ -1,6 +1,6 @@
 from ncclient import manager
-from router import router
-
+import net_devs
+router = net_devs.get_homelab_4331()
 loopback = """
 <config>
     <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
