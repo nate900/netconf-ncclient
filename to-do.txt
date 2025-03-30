@@ -1,7 +1,12 @@
 Challenges
 
 1. Get all interfaces
+This is done in the python script get-interfaces.py
 2. Get a specific interface
+This is done in the python script get-if.py
 3. Update an attribute of an interface
+This is done in the python script modify-if.py
 4. Insert a loopback interface
+This is done in the python script create-loopback.py
 5. Delete the loopback interface
+This is done in the script del-if.py
